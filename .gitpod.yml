@@ -1,0 +1,14 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: flutter pub get
+    command: flutter run -d web
+
+ports:
+  - port: 8000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - Dart-Code.flutter
