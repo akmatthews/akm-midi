@@ -2,7 +2,7 @@ FROM gitpod/workspace-full
 
 # Install Flutter
 RUN sudo apt-get update \
-    && sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa \
+    && sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa libgtk-3-dev \
     && sudo rm -rf /var/lib/apt/lists/*
 
 # Download Flutter SDK
