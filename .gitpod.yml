@@ -2,8 +2,8 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: flutter pub get
-    command: flutter run -d web
+  - init: cd midi_app && flutter config --enable-web && flutter pub get
+    command: cd midi_app && flutter run -d chrome
 
 ports:
   - port: 8000
