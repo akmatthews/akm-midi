@@ -3,10 +3,13 @@ image:
 
 tasks:
   - init: cd midi_app && flutter config --enable-web && flutter pub get
-    command: cd midi_app && flutter run -d chrome
+  - name: Start Flutter Web
+    command: cd midi_app && flutter run -d web-server
 
 ports:
   - port: 8000
+    onOpen: open-preview
+  - port: 9100
     onOpen: open-preview
 
 vscode:
