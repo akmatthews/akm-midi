@@ -4,10 +4,14 @@ image:
 tasks:
   - init: cd midi_app && flutter config --enable-web && flutter pub get
   - name: Start Flutter Web
-    command: cd midi_app && flutter run -d web-server
+    command: cd midi_app && flutter run -d web-server --web-port=8000 --observatory-port=9200
+  - name: Start Dart DevTools
+    command: dart pub global activate devtools && dart pub global run devtools
 
 ports:
   - port: 8000
+    onOpen: open-preview
+  - port: 9200
     onOpen: open-preview
   - port: 9100
     onOpen: open-preview
